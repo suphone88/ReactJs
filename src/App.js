@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import DataDivisions from "./components/divisions/DataDivisions";
+import FamousPlace from "./components/divisions/FamousPlace";
+import SingleDivision from "./components/divisions/SingleDivision";
+import ErrorPage from "./components/ErrorPage";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path="/" element={<DataDivisions />} />
+        <Route path="/division/:id" element={<SingleDivision />} />
+        <Route path="/famousplace/:id" element={<FamousPlace />} />
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
     </div>
   );
 }
