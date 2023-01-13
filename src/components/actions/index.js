@@ -8,13 +8,13 @@ import {
 
 export const fetchDivision = () => async (dispatch) => {
   const response = await ApiData.get("/division");
-  console.log("Actions Division >>", response.data);
+  //console.log("Actions Division >>", response.data);
   dispatch({ type: FETCH_DIVISION, payload: response.data.result });
 };
 
 export const fetchSingleDivision = (_id) => async (dispatch) => {
   const response = await ApiData.get(`/division/${_id}`);
-  console.log("Actions click >>", response.data.result);
+  //console.log("Actions click >>", response.data.result);
   dispatch({ type: FETCH_SINGLEDIVISION, payload: response.data.result });
 };
 

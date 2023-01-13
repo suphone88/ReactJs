@@ -11,14 +11,15 @@ const initialState = {
 };
 
 export const dataReducer = (state = initialState, action) => {
-  console.log("Reducer Division >>", action.payload);
+  //console.log("Reducer Division >>", action.payload);
   switch (action.type) {
     case FETCH_DIVISION:
       return { ...state, divisions: [...action.payload] };
     case FETCH_SINGLEDIVISION:
-      console.log("Reducer SingleDivision >>", action.payload);
+      //console.log("Reducer SingleDivision >>", action.payload);
       return { ...state, singleDivision: { ...action.payload } };
     case FETCH_FAMOUSPLACE:
+      console.log("Reducer famousPlace >>", action.payload);
       return { ...state, famousPlace: { ...action.payload } };
     default:
       return state;
