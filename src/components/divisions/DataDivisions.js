@@ -12,7 +12,7 @@ const DataDivisions = () => {
 
   useEffect(() => {
     dispatch(fetchDivision(divisions));
-  }, []);
+  }, [divisions]);
 
   return (
     <div>
